@@ -2,4 +2,8 @@ h1 {
   color: red;
 }
 
+.customShadow {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+}
+
 /*# sourceMappingURL=custom.css.map */
