@@ -13,7 +13,11 @@ const router = createBrowserRouter([
       {path : "/", element: <HomePage />},
       {path : "/tous-les-persos", element:<AllCharacters />},
       {path:"/*",element:<ErrorPage />}
-    ]
+    ],
+      // Activez le flag pour adopter le comportement de la version 7 dès maintenant
+      future: {
+        v7_skipActionErrorRevalidation: true,
+      },
   }
 ])
 
