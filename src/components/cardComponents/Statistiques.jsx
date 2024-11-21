@@ -1,15 +1,20 @@
+import { useState } from "react"
 
 export default function Statistiques({stat, value, unit}) {
+  const [statValue, setStatValue] = useState(value);
+  
+  
   return (
     <div className="flex justify-between">
     <p className="font-bold">{stat} :</p>
     <div className="flex items-center">
-      <div className="cursor-pointer">
+      <div onClick={()=>setStatValue(statValue - 2)} className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
           height="1em"
           viewBox="0 0 24 24"
+          className="cursor-pointer"
         >
           <path
             fill="currentColor"
@@ -17,13 +22,14 @@ export default function Statistiques({stat, value, unit}) {
           ></path>
         </svg>
       </div>
-      <p>{value}{unit} </p>
-      <div className="cursor-pointer">
+      <p>{statValue}{unit} </p>
+      <div onClick={()=>setStatValue(statValue + 2)} className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
           height="1em"
           viewBox="0 0 24 24"
+          className="cursor-pointer"
         >
           <path
             fill="currentColor"

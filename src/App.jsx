@@ -1,21 +1,27 @@
-import Card from "./components/Card";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./components/Layout";
+import HomePage from "./pages/HomePage";
+import AllCharacters from "./pages/AllCharacters";
+import ErrorPage from "./pages/ErrorPage";
+
+const router = createBrowserRouter([
+  {
+    // racine du site
+    path:'/',
+    element : <Layout />,
+    children : [
+      {path : "/", element: <HomePage />},
+      {path : "/tous-les-persos", element:<AllCharacters />},
+      {path:"/*",element:<ErrorPage />}
+    ]
+  }
+])
 
 function App() {
+
+  
   return (
-    <main className="flex flex-col min-h-svh">
-      <Navbar />
-      <section className="flex-grow container p-2">
-        <h1 className="font-bold rounded-xl bg-neutral-300 px-3 py-5 w-fit m-10">
-          Coucou les fighters !!!
-        </h1>
-        <div className="flex items-center justify-center">
-        <Card />
-        </div>
-      </section>
-      <Footer />
-    </main>
+    <RouterProvider router={router} />
   )
 }
 

@@ -1,24 +1,26 @@
-import { useState } from "react";
+
+import Buttons from "./Buttons";
 import Statistiques from "./cardComponents/Statistiques";
 
-export default function Card() {
-    const allStat = [
-        {stat: "Santé", value: "50", unit:"PV"},
-        {stat: "Magie", value: "15", unit:"PM"},
-        {stat: "Attaque", value: "25", unit:"ATK"},
+export default function Card({character}) {
+  console.log(character)  
+  const allStat = [
+        {stat: "Santé", value: character.health, unit:"PV"},
+        {stat: "Magie", value: character.magic, unit:"PM"},
+        {stat: "Attaque", value: character.power, unit:"ATK"},
     ]
   
     return (
     <div className="flex flex-col border-2 border-neutral-500 w-[250px] h-[400px] rounded-xl customShadow overflow-hidden">
       <div className="w-[250px] h-[250px] overflow-hidden">
         <img
-          src="src/assets/images/personnages/chevalier_feu.jpg"
-          alt="avatar chevalier"
+          src={`src/assets/images/personnages/${character.image}`}
+          alt={character.name}
           className="object-cover duration-300 hover:scale-105"
         />
       </div>
       <div className="p-2">
-        <p className="text-xl text-center">Chevalier de feu</p>
+        <p className="text-xl text-center">{character.name}</p>
         <div className="flex flex-col">
             {
                 allStat.map((oneStat, index) => (
@@ -28,12 +30,8 @@ export default function Card() {
 
         </div>
         <div className="flex justify-between mt-2">
-          <button className="px-2 py-1 bg-blue-500 border-2 border-neutral-400 rounded-xl hover:border-neutral-500 hover:opacity-90 duration-300">
-            ATTAQUER
-          </button>
-          <button className="px-2 py-1 bg-red-700 border-2 border-neutral-400 rounded-xl hover:border-neutral-500 hover:opacity-90 duration-300">
-            DEFENDRE
-          </button>
+            <Buttons color="bg-red-500">ATTAQUER</Buttons>
+            <Buttons color="bg-blue-500">DEFENDRE</Buttons>
         </div>
       </div>
     </div>
