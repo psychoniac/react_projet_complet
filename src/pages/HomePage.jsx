@@ -20,7 +20,7 @@ export default function HomePage() {
 
   return (
     <>
-      <h1 className="font-bold m-10">
+      <h1 className="font-bold m-10 ">
         Coucou les fighters !!!
       </h1>
       <div className="flex items-center justify-center gap-8 flex-wrap">

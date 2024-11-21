@@ -7,7 +7,7 @@ export default function Layout() {
     <div>
       <main className="flex flex-col min-h-svh">
         <Navbar />
-        <section className="flex-grow container p-2">
+        <section className="flex-grow container p-2 mx-auto">
             {/*c'est ici que les pages enfant seront rendu*/}
             <Outlet />
         </section>

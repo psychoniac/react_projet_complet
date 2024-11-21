@@ -4,6 +4,7 @@ export default function Navbar() {
   const navItems = [
     { text: "Accueil", path: "/" },
     { text: "Tous les persos", path: "/tous-les-persos" },
+    {text: "Créer un personnage", path: "/creer-un-perso"}
   ];
   return (
     <nav className="p-4 mb-3 border-2 border-bottom customShadow">

@@ -1,3 +1,12 @@
+@font-face{
+    font-family: 'my-font-badG';
+    src: url('src/assets/fonts/Bad_grunge.ttf');
+}
+@font-face{
+    font-family: 'my-font-28';
+    src: url('src/assets/fonts/28_Days_Later.ttf');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
